@@ -9,6 +9,97 @@ body {
     margin-bottom: 100px;
 }
 
+.menu {
+    max-width: 1280px;
+    margin: 50px auto;
+    margin-bottom: 150px;
+    
+    >ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            a {
+                padding: 10px 20px;
+                display: block;
+                white-space: nowrap;
+                text-decoration: none;
+                color: black;
+                font-size: 18px;
+                font-weight: 700;
+
+                &:hover {
+                    background: #555;
+                    color: white;
+                }
+            }
+
+            ul {
+                position: absolute;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                background: #555;
+                display: none;
+                width: 200px;
+                z-index: 1;
+                // margin-top: 10px;
+                li {
+                    position: relative;
+                }
+                ul {
+                    left: 100%;
+                    top: 0;
+                }
+
+               
+                
+            }
+
+            ul.active {
+                display: block;
+            }
+        }
+
+
+        li.more {
+            position: relative;
+
+            &:hover {
+                .list {
+                    display: block;
+                }
+            }
+            .list {
+                position: absolute;
+                display: none;
+                background: #555;
+            }
+        }
+    }
+
+    ul.direct {
+        left:auto;
+        right: 100%;
+
+        ul {
+            left:auto;
+            right: 100%;
+        }
+    }
+
+    ul.direct-right {
+        left: 100% !important;
+        right: auto !important;
+        ul {
+            left: 100%;
+            right: auto;
+        }
+    }
+}
+
 .accord {
     width: 1280px;
     margin: 0 auto;
